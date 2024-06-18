@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  astro:
+    image: syntapse/pnpm-alpine
+    hostname: qwik 
+    container_name: qwik
+    environment:
+    # ${VAR_XXX} are required system env vars - add them to ~./bashrc
+    - VIRTUAL_HOST=qwik.${LETSENCRYPT_HOST}
+    - LETSENCRYPT_HOST=qwik.${LETSENCRYPT_HOST}
+    - LETSENCRYPT_EMAIL=${LETSENCRYPT_EMAIL}
+    expose:
+      - "5173"
+    volumes:
+      - .:/app
+    working_dir: /app
+    # command: tail -f /dev/null
+    command: "pnpm run start"
+    networks:
+      main-net: 
+
+networks:
+  main-net:
+    external:
+      name: proxy_main-net
