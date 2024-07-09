@@ -1,14 +1,14 @@
 version: '3'
 
 services:
-  astro:
+  qwikdev:
     image: syntapse/pnpm-alpine
-    hostname: qwik 
-    container_name: qwik
+    hostname: qwikdev 
+    container_name: qwikdev
     environment:
     # ${VAR_XXX} are required system env vars - add them to ~./bashrc
-    - VIRTUAL_HOST=qwik.${LETSENCRYPT_HOST}
-    - LETSENCRYPT_HOST=qwik.${LETSENCRYPT_HOST}
+    - VIRTUAL_HOST=qwikdev.${LETSENCRYPT_HOST}
+    - LETSENCRYPT_HOST=qwikdev.${LETSENCRYPT_HOST}
     - LETSENCRYPT_EMAIL=${LETSENCRYPT_EMAIL}
     expose:
       - "5173"
@@ -17,6 +17,25 @@ services:
     working_dir: /app
     # command: tail -f /dev/null
     command: "pnpm run start"
+    networks:
+      main-net: 
+
+  qwik:
+    image: syntapse/pnpm-alpine
+    hostname: qwik
+    container_name: qwik
+    environment:
+    # ${VAR_XXX} are required system env vars - add them to ~./bashrc
+    - VIRTUAL_HOST=qwik.${LETSENCRYPT_HOST}
+    - LETSENCRYPT_HOST=qwik.${LETSENCRYPT_HOST}
+    - LETSENCRYPT_EMAIL=${LETSENCRYPT_EMAIL}
+    expose:
+      - "3000"
+    volumes:
+      - .:/app
+    working_dir: /app
+    # command: tail -f /dev/null
+    command: "pnpm run serve"
     networks:
       main-net: 
 
