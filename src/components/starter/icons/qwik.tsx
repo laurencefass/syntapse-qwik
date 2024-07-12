@@ -6,6 +6,7 @@ export const QwikLogo = ({
   height?: number;
 }) => (
   <svg
+    style = {{padding: "20px"}}
     width={width}
     height={height}
     viewBox="0 0 167 53"

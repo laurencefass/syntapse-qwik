@@ -1,17 +1,20 @@
-import { component$, useSignal } from '@builder.io/qwik';
+import { component$ } from '@builder.io/qwik';
 import { ReactGreeting } from './react.greeting';
 import { ReactCounter } from './react.counter';
 import { Islands } from './qwik.islands';
 import { Tabs } from './qwik.tabs';
 import { ReactSlider } from './react.slider';
  
+const mainStyle = {
+  marginTop: "50px",
+  padding: "50px"
+}
+
 export default component$(() => {
-  const selected = useSignal(0);
-  
   return (
-    <main>
-      <h3>This is a Qwik component which renders various React islands</h3>
-      <p>This is a Qwik component. It loads 2 resumable React components!</p>
+    <main style={mainStyle}>
+      <h2>Qwik React Integration</h2>
+      <p>This is a Qwik component. It loads 2 resumable React components (islands)</p>
       <ReactGreeting />
       <ReactCounter />
       <p>This next example is intercommunication between React Islands using signals</p>

@@ -4,7 +4,7 @@ import {
   useSignal,
   useStore,
   useTask$,
-  useVisibleTask$,
+  // useVisibleTask$,
 } from "@builder.io/qwik";
 
 import { isServer } from '@builder.io/qwik/build';

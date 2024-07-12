@@ -29,6 +29,6 @@ function ReactTabs({
           {children}
         </Box>
       </>
-  };
+  }
 
 export const QTabs = qwikify$(ReactTabs, { eagerness: 'hover' });
