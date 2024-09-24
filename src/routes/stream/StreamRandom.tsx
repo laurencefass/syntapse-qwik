@@ -22,19 +22,17 @@ const streamRandom = server$(async function* () {
 });
 
 const startStream = server$(() => {
-    console.log("startStream");
     if (!serverState.handle) {
-        console.log("startStream - setting interval");
         serverState.handle = setInterval(() => {
             serverState.randomValue = Math.floor(Math.random() * 1000);
+            console.log("New random value:", serverState.randomValue);
         }, 1000);
+
     }
 });
 
 const stopStream = server$(() => {
-    console.log("startStream");
     if (serverState.handle) {
-        console.log("startStream - clearing interval");
         clearInterval(serverState.handle);
         serverState.handle = null;
     }
@@ -45,13 +43,13 @@ export const StreamRandom = component$(() => {
 
     return (
         <div class="bordered">
-            <h4>Qwik can stream data indefinitely AND play/pause directly on the server!</h4>
+            <h4>Stream Random Numbers Synchronized Across Clients</h4>
+            <div>This page is using generators to subscribe to a random value generated on the server. All connected clients will be sync'd to this value</div>
             <div>
                 <button
                     onClick$={async () => {
                         await startStream();
                         const response = await streamRandom();
-                        console.log("response", response);
                         for await (const value of response) {
                             randomNumber.value = `${value}`;
                         }
@@ -66,7 +64,7 @@ export const StreamRandom = component$(() => {
                 >
                     Stop Streaming
                 </button>
-                <h4>random number: {randomNumber.value}</h4>
+                <h4>Random Number: {randomNumber.value}</h4>
             </div>
         </div>
     );
