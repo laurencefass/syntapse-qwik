@@ -1,0 +1,33 @@
+.page {
+  height: 100vh;
+  padding: 2vw;
+
+  * {
+    margin-bottom: 20px;
+  }
+
+  .bordered {
+    border: 2px solid white;
+    padding: 20px;
+  }
+}
+
+button {
+  margin: 10px;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+h2 {
+  font-size: 2.5em;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+h4 {
+  font-size: 1.5em;
+}

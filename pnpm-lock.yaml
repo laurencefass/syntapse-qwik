@@ -14,13 +14,13 @@ importers:
     devDependencies:
       '@builder.io/qwik':
         specifier: ^1.5.6
-        version: 1.5.6(@types/node@20.14.2)(undici@6.18.2)
+        version: 1.5.6(@types/node@20.14.2)(sass@1.79.3)(undici@6.18.2)
       '@builder.io/qwik-city':
         specifier: ^1.5.6
-        version: 1.5.6(@types/node@20.14.2)(rollup@4.18.0)
+        version: 1.5.6(@types/node@20.14.2)(rollup@4.18.0)(sass@1.79.3)
       '@builder.io/qwik-react':
         specifier: 0.5.0
-        version: 0.5.0(@builder.io/qwik@1.5.6(@types/node@20.14.2)(undici@6.18.2))(@types/react-dom@18.3.0)(@types/react@18.3.3)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+        version: 0.5.0(@builder.io/qwik@1.5.6(@types/node@20.14.2)(sass@1.79.3)(undici@6.18.2))(@types/react-dom@18.3.0)(@types/react@18.3.3)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@emotion/react':
         specifier: ^11.11.1
         version: 11.11.4(@types/react@18.3.3)(react@18.2.0)
@@ -81,6 +81,9 @@ importers:
       react-dom:
         specifier: 18.2.0
         version: 18.2.0(react@18.2.0)
+      sass:
+        specifier: ^1.79.3
+        version: 1.79.3
       typescript:
         specifier: 5.4.5
         version: 5.4.5
@@ -89,10 +92,10 @@ importers:
         version: 6.18.2
       vite:
         specifier: ^5.2.10
-        version: 5.2.13(@types/node@20.14.2)
+        version: 5.2.13(@types/node@20.14.2)(sass@1.79.3)
       vite-tsconfig-paths:
         specifier: ^4.2.1
-        version: 4.3.2(typescript@5.4.5)(vite@5.2.13(@types/node@20.14.2))
+        version: 4.3.2(typescript@5.4.5)(vite@5.2.13(@types/node@20.14.2)(sass@1.79.3))
 
 packages:
 
@@ -1049,6 +1052,10 @@ packages:
   character-reference-invalid@2.0.1:
     resolution: {integrity: sha512-iBZ4F4wRbyORVsu0jPV7gXkOsGYjGHPmAyv+HiHG8gi5PtC9KI2j1+v8/tlibRvjoWX027ypmG/n0HtO5t7unw==}
 
+  chokidar@4.0.1:
+    resolution: {integrity: sha512-n8enUVCED/KVRQlab1hr3MVpcVMvxtZjmEa956u+4YijlmQED223XMSYj2tLuKvr4jcCTzNNMpQDUer72MMmzA==}
+    engines: {node: '>= 14.16.0'}
+
   clsx@2.1.1:
     resolution: {integrity: sha512-eYm0QWBtUrBWZWG0d386OGAw16Z995PiOVo2B7bjWSbHedGl5e0ZWaq65kOGgUSNesEIDkB9ISbTg/JK9dhCZA==}
     engines: {node: '>=6'}
@@ -1556,6 +1563,9 @@ packages:
   imagetools-core@6.0.4:
     resolution: {integrity: sha512-N1qs5qn7u9nR3kboISkYuvJm8MohiphCfBa+wx1UOropVaFis9/mh6wuDPLHJNhl6/64C7q2Pch5NASVKAaSrg==}
     engines: {node: '>=12.0.0'}
+
+  immutable@4.3.7:
+    resolution: {integrity: sha512-1hqclzwYwjRDFLjcFxOM5AYkkG0rpFPpr1RLPMEuGczoS7YA8gLhy8SWXYRAA/XwfEHpfo3cw5JGioS32fnMRw==}
 
   import-fresh@3.3.0:
     resolution: {integrity: sha512-veYYhQa+D1QBKznvhUHxb8faxlrwUnxseDAbAp457E0wLNio2bOSKnjYDhMj+YiAq61xrMGhQk9iXVk5FzgQMw==}
@@ -2097,6 +2107,10 @@ packages:
     resolution: {integrity: sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==}
     engines: {node: '>=0.10.0'}
 
+  readdirp@4.0.1:
+    resolution: {integrity: sha512-GkMg9uOTpIWWKbSsgwb5fA4EavTR+SG/PMPoAY8hkhHfEEY0/vqljY+XHqtDf2cr2IJtoNRDbrrEpZUiZCkYRw==}
+    engines: {node: '>= 14.16.0'}
+
   regenerator-runtime@0.14.1:
     resolution: {integrity: sha512-dYnhHh0nJoMfnkZs6GmmhFknAGRrLznOu5nc9ML+EJxGvrx6H7teuevqVqCuPcPK//3eDrrjQhehXVx9cnkGdw==}
 
@@ -2157,6 +2171,11 @@ packages:
 
   safer-buffer@2.1.2:
     resolution: {integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==}
+
+  sass@1.79.3:
+    resolution: {integrity: sha512-m7dZxh0W9EZ3cw50Me5GOuYm/tVAJAn91SUnohLRo9cXBixGUOdvmryN+dXpwR831bhoY3Zv7rEFt85PUwTmzA==}
+    engines: {node: '>=14.0.0'}
+    hasBin: true
 
   satori-html@0.3.2:
     resolution: {integrity: sha512-wjTh14iqADFKDK80e51/98MplTGfxz2RmIzh0GqShlf4a67+BooLywF17TvJPD6phO0Hxm7Mf1N5LtRYvdkYRA==}
@@ -2582,7 +2601,7 @@ snapshots:
       '@babel/helper-validator-identifier': 7.24.7
       to-fast-properties: 2.0.0
 
-  '@builder.io/qwik-city@1.5.6(@types/node@20.14.2)(rollup@4.18.0)':
+  '@builder.io/qwik-city@1.5.6(@types/node@20.14.2)(rollup@4.18.0)(sass@1.79.3)':
     dependencies:
       '@mdx-js/mdx': 3.0.1
       '@types/mdx': 2.0.13
@@ -2590,7 +2609,7 @@ snapshots:
       svgo: 3.3.2
       undici: 6.18.2
       vfile: 6.0.1
-      vite: 5.2.13(@types/node@20.14.2)
+      vite: 5.2.13(@types/node@20.14.2)(sass@1.79.3)
       vite-imagetools: 6.2.9(rollup@4.18.0)
       zod: 3.23.8
     transitivePeerDependencies:
@@ -2604,19 +2623,19 @@ snapshots:
       - supports-color
       - terser
 
-  '@builder.io/qwik-react@0.5.0(@builder.io/qwik@1.5.6(@types/node@20.14.2)(undici@6.18.2))(@types/react-dom@18.3.0)(@types/react@18.3.3)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
+  '@builder.io/qwik-react@0.5.0(@builder.io/qwik@1.5.6(@types/node@20.14.2)(sass@1.79.3)(undici@6.18.2))(@types/react-dom@18.3.0)(@types/react@18.3.3)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
     dependencies:
-      '@builder.io/qwik': 1.5.6(@types/node@20.14.2)(undici@6.18.2)
+      '@builder.io/qwik': 1.5.6(@types/node@20.14.2)(sass@1.79.3)(undici@6.18.2)
       '@types/react': 18.3.3
       '@types/react-dom': 18.3.0
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
 
-  '@builder.io/qwik@1.5.6(@types/node@20.14.2)(undici@6.18.2)':
+  '@builder.io/qwik@1.5.6(@types/node@20.14.2)(sass@1.79.3)(undici@6.18.2)':
     dependencies:
       csstype: 3.1.3
       undici: 6.18.2
-      vite: 5.2.13(@types/node@20.14.2)
+      vite: 5.2.13(@types/node@20.14.2)(sass@1.79.3)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -3475,6 +3494,10 @@ snapshots:
 
   character-reference-invalid@2.0.1: {}
 
+  chokidar@4.0.1:
+    dependencies:
+      readdirp: 4.0.1
+
   clsx@2.1.1: {}
 
   collapse-white-space@2.1.0: {}
@@ -4166,6 +4189,8 @@ snapshots:
   imagetools-core@6.0.4:
     dependencies:
       sharp: 0.33.4
+
+  immutable@4.3.7: {}
 
   import-fresh@3.3.0:
     dependencies:
@@ -4866,6 +4891,8 @@ snapshots:
     dependencies:
       loose-envify: 1.4.0
 
+  readdirp@4.0.1: {}
+
   regenerator-runtime@0.14.1: {}
 
   regexp.prototype.flags@1.5.2:
@@ -4959,6 +4986,12 @@ snapshots:
       is-regex: 1.1.4
 
   safer-buffer@2.1.2: {}
+
+  sass@1.79.3:
+    dependencies:
+      chokidar: 4.0.1
+      immutable: 4.3.7
+      source-map-js: 1.2.0
 
   satori-html@0.3.2:
     dependencies:
@@ -5305,18 +5338,18 @@ snapshots:
     transitivePeerDependencies:
       - rollup
 
-  vite-tsconfig-paths@4.3.2(typescript@5.4.5)(vite@5.2.13(@types/node@20.14.2)):
+  vite-tsconfig-paths@4.3.2(typescript@5.4.5)(vite@5.2.13(@types/node@20.14.2)(sass@1.79.3)):
     dependencies:
       debug: 4.3.5
       globrex: 0.1.2
       tsconfck: 3.1.0(typescript@5.4.5)
     optionalDependencies:
-      vite: 5.2.13(@types/node@20.14.2)
+      vite: 5.2.13(@types/node@20.14.2)(sass@1.79.3)
     transitivePeerDependencies:
       - supports-color
       - typescript
 
-  vite@5.2.13(@types/node@20.14.2):
+  vite@5.2.13(@types/node@20.14.2)(sass@1.79.3):
     dependencies:
       esbuild: 0.20.2
       postcss: 8.4.38
@@ -5324,6 +5357,7 @@ snapshots:
     optionalDependencies:
       '@types/node': 20.14.2
       fsevents: 2.3.3
+      sass: 1.79.3
 
   which-boxed-primitive@1.0.2:
     dependencies:

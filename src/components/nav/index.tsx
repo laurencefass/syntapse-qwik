@@ -10,6 +10,8 @@ const navStyle = {
   alignItems: "center",
   padding: "2rem",
   gap: "20px",
+  background: "rgba(0, 0, 0, 0.5)",
+  borderRadius: "10px"
 } as any;
 
 const linkStyle = {
@@ -30,6 +32,9 @@ export const Nav = component$(() => {
         </a>
         <a href="/react" style={linkStyle}>
           React Integration
+        </a>
+        <a href="/stream" style={linkStyle}>
+          Streaming demo
         </a>
         <a href="/demo/flower" style={linkStyle}>
           Flower Demo
