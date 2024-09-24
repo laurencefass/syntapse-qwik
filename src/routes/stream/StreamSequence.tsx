@@ -16,7 +16,7 @@ const streamSequence = server$(
 
 export const StreamSequence = component$(() => {
     const message = useSignal('');
-    return <div class="bordered">
+    return <div id="stream-sequence" class="bordered">
         <h4>Sequence generator</h4>
         <button
             onClick$={async () => {

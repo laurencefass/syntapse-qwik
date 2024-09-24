@@ -2,7 +2,7 @@ import { component$, useSignal } from "@builder.io/qwik";
 import { server$ } from "@builder.io/qwik-city";
 
 const isServer = typeof global !== "undefined";
-var serverState: any;
+let serverState: any;
 
 if (isServer) {
     const nodeGlobal = (global as any);
@@ -42,7 +42,7 @@ export const StreamRandom = component$(() => {
     const randomNumber = useSignal('');
 
     return (
-        <div class="bordered">
+        <div id="stream-random" class="bordered">
             <h4>Stream Random Numbers Synchronized Across Clients</h4>
             <div>This page is using generators to subscribe to a random value generated on the server. All connected clients will be sync'd to this value</div>
             <div>

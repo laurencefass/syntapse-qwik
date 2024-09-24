@@ -5,7 +5,7 @@ export const Islands = component$(() => {
   console.log('Qwik Render');
   const count = useSignal(0);
   return (
-    <div className="bordered">
+    <div class="bordered">
       <h3>This next example is intercommunication between React Islands using signals</h3>
       <p>The button and the display are two separate React islands that communicate using signals</p>
       <QButton
