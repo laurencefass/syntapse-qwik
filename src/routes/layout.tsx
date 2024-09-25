@@ -9,6 +9,34 @@ import { Nav } from "~/components/nav";
 
 import "./layout.scss"
 
+import type { DocumentHead } from "@builder.io/qwik-city";
+export const head: DocumentHead = () => {
+  const url = `https://qwik${process.env["NODE_ENV"] === "development" ? "dev" : ""}.syntapse.co.uk`;
+
+  return {
+    title: 'Syntapse Qwik app',
+    meta: [
+      {
+        name: 'Syntapse Qwik',
+        content: "Qwik demo site",
+      },
+      {
+        property: 'og:title',
+        content: 'Syntapse Qwik',
+      },
+      {
+        property: 'og:description',
+        content: "Qwik demo site",
+      },
+      {
+        property: 'og:image',
+        content: `${url}/og/og-image.jpg`,
+      },
+    ],
+  }
+};
+
+
 export const onGet: RequestHandler = async ({ cacheControl }) => {
   // Control caching for this request for best performance and to reduce hosting costs:
   // https://qwik.dev/docs/caching/

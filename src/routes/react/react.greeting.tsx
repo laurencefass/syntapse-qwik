@@ -4,15 +4,18 @@ import { useEffect, useState } from "react";
 
 // Create React component standard way
 function Greeting() {
-  const [value, setValue] = useState("Rendered on server. Hover to re-render on client");
+  const [value, setValue] = useState("Component pre-rendered on server. Hover to re-render on client");
+
   useEffect(() => {
     setValue(() => "Re-rendered on client");
   }, [])
+
   return <div className="bordered">
     <h3>React Greeting Component</h3>
-    <p> This is a React component wrapped in qwikify$(). It loads 2 resumable React components (islands)</p>
-    <h4>Qwik can render React components on server and update them on the client without lots of bootstrap code!</h4>
-    <p>{value}</p>
+    <p> This is a React component wrapped in qwikify$(). By default it renders on the server.</p>
+    <h4>Qwik can render React components on server and update them on the client without any bootstrap code!</h4>
+    <div>It doesnt have server components or client components and doesnt have "use client". It can do both!</div>
+    <h4 className="bordered">{value}</h4>
   </div>;
 }
 

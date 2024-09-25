@@ -57,6 +57,10 @@ body {
   display: none;
 }
 
+div {
+  font-size: 1.25rem;
+}
+
 p {
   padding-top: 20px;
   line-height: 1.5;
