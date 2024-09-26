@@ -1,45 +1,53 @@
-import { component$ } from "@builder.io/qwik";
+import { component$, useSignal, useVisibleTask$, $ } from "@builder.io/qwik";
 import { QwikLogo } from "../starter/icons/qwik";
 
-const navStyle = {
-  position: "fixed",
-  top: "0px",
-  right: "0px",
-  display: "flex",
-  justifyContent: "flex-end",
-  alignItems: "center",
-  padding: "2rem",
-  gap: "20px",
-  background: "rgba(0, 0, 0, 0.5)",
-  borderRadius: "10px"
-} as any;
+import "./styles.scss"
 
-const linkStyle = {
-  color: "#fff",
-  textDecoration: "none",
-  fontSize: "1.2rem",
-} as any;
+// not currently used
+export const useScreenWidth = () => {
+  const screenWidth = useSignal(0);
+
+  useVisibleTask$(() => {
+    screenWidth.value = window.innerWidth;
+    const handleResize = () => {
+      screenWidth.value = window.innerWidth;
+    };
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  });
+  return screenWidth;
+};
+
 
 export const Nav = component$(() => {
+  const showMenu = useSignal(false);
+
+  const toggleShowMenu = $(() => {
+    showMenu.value = showMenu.value === false ? true : false;
+  });
+
   return (
     <>
       <a href="/" title="qwik">
         <QwikLogo height={50} width={143} />
       </a>
-      <nav style={navStyle}>
-        <a href="/" style={linkStyle}>
+      <button class="trigram" onClick$={() => toggleShowMenu()}>☰</button>
+      <nav class={`nav ${showMenu.value ? 'active' : ''}`}>
+        <a href="/" class="link">
           Home
         </a>
-        <a href="/react" style={linkStyle}>
+        <a href="/react" class="link">
           React Integration
         </a>
-        <a href="/stream" style={linkStyle}>
+        <a href="/stream" class="link">
           Streaming demo
         </a>
-        <a href="/demo/flower" style={linkStyle}>
+        <a href="/demo/flower" class="link">
           Flower Demo
         </a>
-        <a href="/demo/todolist" style={linkStyle}>
+        <a href="/demo/todolist" class="link">
           Todo List Demo
         </a>
         <a href="https://qwik.dev/docs/components/overview/" target="_blank">
