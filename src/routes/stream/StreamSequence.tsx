@@ -4,7 +4,7 @@ import { server$ } from "@builder.io/qwik-city";
 // colocated server functions
 const streamSequence = server$(
     async function* () {
-        const array = [...Array(100).keys()];
+        const array = [...Array(50).keys()];
         for (const value of array) {
             yield value;
             await new Promise((resolve) => {
@@ -18,6 +18,7 @@ export const StreamSequence = component$(() => {
     const message = useSignal('');
     return <div id="stream-sequence" class="bordered">
         <h4>Sequence generator</h4>
+        <div>Basic demonstration of Qwik's streaming capabilities. Each number is being transmitted asynchronously by the server</div>
         <button
             onClick$={async () => {
                 message.value = '';

@@ -19,6 +19,10 @@
   pointer-events: none;
 }
 
+.hero h2 {
+  text-align: center;
+}
+
 .hero p {
   color: white;
   margin: 0;

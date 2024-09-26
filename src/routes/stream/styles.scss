@@ -1,6 +1,12 @@
 .jump-menu {
   display: flex;
-  gap: 20px;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  @media (max-width: 720px) {
+    flex-direction: column;
+    gap: 0px;
+  }
 }
 
 input {
